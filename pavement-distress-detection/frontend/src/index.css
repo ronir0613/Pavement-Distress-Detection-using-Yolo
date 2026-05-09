@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased;
+    background:
+      radial-gradient(ellipse at 15% 0%, rgba(59,108,246,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 100%, rgba(168,85,247,0.05) 0%, transparent 55%),
+      #f8fafc;
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #f1f5f9; }
+  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+}
+
+@layer components {
+  /* ── Card ── */
+  .glass-card {
+    @apply bg-white border border-slate-200 rounded-2xl;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+  }
+
+  /* ── Primary button ── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
+           bg-brand-600 hover:bg-brand-700 active:bg-brand-800
+           text-white transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed
+           shadow-sm hover:shadow-md;
+  }
+
+  /* ── Secondary button ── */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm
+           border border-slate-200 text-slate-600 hover:text-slate-900
+           hover:border-slate-300 hover:bg-slate-50 bg-white
+           transition-all duration-200 shadow-sm;
+  }
+
+  /* ── Input ── */
+  .input-field {
+    @apply w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5
+           text-slate-900 text-sm placeholder-slate-400
+           focus:outline-none focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500
+           shadow-sm transition-all duration-200;
+  }
+
+  /* ── Badge ── */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  /* ── Nav ── */
+  .nav-link {
+    @apply px-4 py-2 rounded-lg text-sm font-medium text-slate-500
+           hover:text-slate-900 hover:bg-slate-100
+           transition-all duration-200;
+  }
+
+  .nav-link-active {
+    @apply px-4 py-2 rounded-lg text-sm font-medium text-brand-700 bg-brand-50;
+  }
+
+  /* ── Section label ── */
+  .section-label {
+    @apply text-xs font-semibold uppercase tracking-widest text-slate-400;
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "run": "run1_baseline",
+  "mAP50": 0.6135,
+  "mAP50-95": 0.2751,
+  "Precision": 0.7944,
+  "Recall": 0.5532,
+  "AP50_Crack": 0.6567,
+  "AP50_Pothole": 0.6679,
+  "AP50_SurfDis": 0.5159
+}

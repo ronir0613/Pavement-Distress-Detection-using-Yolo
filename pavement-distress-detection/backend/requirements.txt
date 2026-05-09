@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+ultralytics
+torch
+torchvision
+opencv-python-headless
+pillow
+python-multipart
+python-dotenv
+aiofiles
