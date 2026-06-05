@@ -1,23 +1,21 @@
-version: '3.8'
-
 services:
   backend:
     build:
-      context: ./backend
+      context: ./pavement-distress-detection/backend
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
     volumes:
-      - ./backend/models:/app/models
-      - ./backend/uploads:/app/uploads
-      - ./backend/predictions:/app/predictions
+      - ./pavement-distress-detection/backend/models:/app/models
+      - ./pavement-distress-detection/backend/uploads:/app/uploads
+      - ./pavement-distress-detection/backend/predictions:/app/predictions
     environment:
       - CORS_ORIGINS=http://localhost
     restart: unless-stopped
 
   frontend:
     build:
-      context: ./frontend
+      context: ./pavement-distress-detection/frontend
       dockerfile: Dockerfile
     ports:
       - "80:80"
