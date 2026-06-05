@@ -2,6 +2,8 @@
 
 An AI-powered web application for detecting and classifying pavement distress types — cracks, potholes, and surface disintegration — using state-of-the-art YOLO-based deep learning models.
 
+**🚀 Live Demo:** [https://pavement-distress-detection-using-yolo-production-7554.up.railway.app/](https://pavement-distress-detection-using-yolo-production-7554.up.railway.app/)
+
 ---
 
 ## 📑 Table of Contents
@@ -209,19 +211,24 @@ Frontend available at **http://localhost:5173**
 
 ---
 
-## 🐳 Docker
+## 🐳 Docker (Recommended Deployment)
 
-A `Dockerfile` is provided for the backend.
+A full-stack `docker-compose.yml` is provided to run both the frontend and backend together.
 
 ```bash
-# Build the backend image
-docker build -t pavement-backend ./backend
+# 1. Place your model weights inside backend/models/
 
-# Run
-docker run -p 8000:8000 \
-  -v $(pwd)/backend/models:/app/models \
-  pavement-backend
+# 2. Build and start the containers in detached mode
+docker-compose up -d --build
+
+# 3. To stop the application
+docker-compose down
 ```
+
+The application will be available at:
+- **Frontend**: http://localhost
+- **Backend API**: http://localhost:8000
+- **API Docs**: http://localhost:8000/docs
 
 ---
 
