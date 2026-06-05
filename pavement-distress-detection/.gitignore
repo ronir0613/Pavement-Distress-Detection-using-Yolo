@@ -28,10 +28,10 @@ backend/history.json
 !backend/predictions/.gitkeep
 
 # Model weights (large binaries — store with Git LFS or externally)
-backend/models/*.pt
-backend/models/*.pth
-backend/models/*.onnx
-backend/models/*.torchscript
+# backend/models/*.pt
+# backend/models/*.pth
+# backend/models/*.onnx
+# backend/models/*.torchscript
 
 # ── Node / Frontend ───────────────────────────────────────────────────────────
 frontend/node_modules/
