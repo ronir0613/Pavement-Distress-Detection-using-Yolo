@@ -11,6 +11,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN mkdir -p uploads predictions
+# Ensure necessary directories exist
+RUN mkdir -p uploads predictions models
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# DigitalOcean App Platform typically provides the PORT environment variable
+ENV PORT=8080
+EXPOSE 8080
+
+CMD sh -c "uvicorn main:app --host 0.0.0.0 --port ${PORT}"
