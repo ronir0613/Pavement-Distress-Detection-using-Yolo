@@ -1,3 +1,4 @@
+import os
 import logging
 from fastapi import HTTPException
 from ultralytics import YOLO
@@ -11,7 +12,7 @@ _models: dict = {}
 def load_all_models():
     """Load every configured YOLO model into memory at startup."""
     for name in MODEL_NAMES:
-        path = f"{MODELS_DIR}{name}.pt"
+        path = os.path.join(MODELS_DIR, f"{name}.pt")
         try:
             logger.info(f"Loading model: {name} from {path}")
             _models[name] = YOLO(path)

@@ -59,8 +59,8 @@ Thumbs.db
 logs/
 
 # ── Docker ────────────────────────────────────────────────────────────────────
-# (Keep Dockerfiles tracked; ignore generated artifacts)
-.dockerignore
+# Keep Dockerfiles AND .dockerignore tracked — Render's build needs them
+# .dockerignore  <-- intentionally NOT ignored
 
 # ── Misc ─────────────────────────────────────────────────────────────────────
 *.bak

@@ -1,9 +1,12 @@
 import os
 
-MODELS_DIR = os.environ.get("MODELS_DIR", "models/")
-UPLOADS_DIR = os.environ.get("UPLOADS_DIR", "uploads/")
-PREDICTIONS_DIR = os.environ.get("PREDICTIONS_DIR", "predictions/")
-HISTORY_FILE = os.environ.get("HISTORY_FILE", "history.json")
+# Absolute base directory of this file — works in any working directory (local, Docker, etc.)
+_BASE = os.path.dirname(os.path.abspath(__file__))
+
+MODELS_DIR      = os.environ.get("MODELS_DIR",      os.path.join(_BASE, "models"))
+UPLOADS_DIR     = os.environ.get("UPLOADS_DIR",     os.path.join(_BASE, "uploads"))
+PREDICTIONS_DIR = os.environ.get("PREDICTIONS_DIR", os.path.join(_BASE, "predictions"))
+HISTORY_FILE    = os.environ.get("HISTORY_FILE",    os.path.join(_BASE, "history.json"))
 
 ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".bmp", ".tiff", ".tif"}
 MAX_FILE_SIZE_MB = 50

@@ -14,8 +14,8 @@ COPY . .
 # Ensure necessary directories exist
 RUN mkdir -p uploads predictions models
 
-# DigitalOcean App Platform typically provides the PORT environment variable
-ENV PORT=8080
-EXPOSE 8080
+# Expose the port — Render injects PORT at runtime, default 8000 locally
+EXPOSE 8000
 
-CMD sh -c "uvicorn main:app --host 0.0.0.0 --port ${PORT}"
+# --workers 1: YOLO model weights are not safe to share across multiple worker processes
+CMD sh -c "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000} --workers 1"

@@ -1,0 +1,25 @@
+# Python virtualenv — never ship this into the image
+venv/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local env file — secrets must come from env vars, not baked in
+.env
+
+# User-generated runtime data — these reset each deploy anyway
+uploads/
+predictions/
+history.json
+
+# Logs
+*.log
+
+# IDE / OS metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
