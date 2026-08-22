@@ -11,7 +11,9 @@ HISTORY_FILE    = os.environ.get("HISTORY_FILE",    os.path.join(_BASE, "history
 ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".bmp", ".tiff", ".tif"}
 MAX_FILE_SIZE_MB = 50
 
-MODEL_NAMES = ["run1_baseline_best", "run2_cbam_best", "run3_cbam_cls2_best", "BaseLine", "SimAM"]
+# Only the default model is eagerly loaded at startup.
+# All others are lazy-loaded on first request (see services/model_loader.py).
+MODEL_NAMES = ["run1_baseline_best"]
 DEFAULT_MODEL = "run1_baseline_best"
 DEFAULT_CONFIDENCE = 0.5
 
