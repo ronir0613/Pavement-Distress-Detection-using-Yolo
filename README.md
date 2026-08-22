@@ -2,7 +2,6 @@
 
 An AI-powered web application for detecting and classifying pavement distress types — cracks, potholes, and surface disintegration — using state-of-the-art YOLO-based deep learning models.
 
-**🚀 Live Demo:** [https://pavement-distress-detection-using-yolo-production-7554.up.railway.app/](https://pavement-distress-detection-using-yolo-production-7554.up.railway.app/)
 
 ---
 
